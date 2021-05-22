@@ -2,10 +2,10 @@
 
 ////////////////=============[Made with ❤️ by AndryMata]===============////////////////
 
-///https://api.telegram.org/bot<token>/setwebhook?url=<url>
+///https://api.telegram.org/bot1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto/setwebhook?url=https://checkerbot71.com
 
-$botToken = "1638003109:AAG9i44hrM4HuJVUiuEoLrSqXMWK6X1p7rw"; // Enter ur bot token
-$website = "https://api.telegram.org/bot".$botToken;
+$botToken = "1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto"; // Enter ur bot token
+$website = "https://api.telegram.org/bot".$botToken;1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto
 error_reporting(0);
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
