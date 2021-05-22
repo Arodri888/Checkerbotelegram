@@ -1,61 +1,6 @@
 <?php
 
-////////////////=============[Made with ❤️ by AndryMata]===============////////////////
-
-///https://api.telegram.org/bot1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto/setwebhook?url=https://checkerbot71.com
-
-$botToken = "1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto"; // Enter ur bot token
-$website = "https://api.telegram.org/bot".$botToken;1632490124:AAF2ysx7dy6LH2W6vQy8gFCmPuQWKTpeUto
-error_reporting(0);
-$update = file_get_contents('php://input');
-$update = json_decode($update, TRUE);
-$print = print_r($update);
-$chatId = $update["message"]["chat"]["id"];
-$gId = $update["message"]["from"]["id"];
-$userId = $update["message"]["from"]["id"];
-$firstname = $update["message"]["from"]["first_name"];
-$username = $update["message"]["from"]["username"];
-$message = $update["message"]["text"];
-$message_id = $update["message"]["message_id"];
-
-//////////=========[Start Command]=========//////////
-
-if ((strpos($message, "!start") === 0)||(strpos($message, "/start") === 0)){
-sendMessage($chatId, "<b>Hello there!!%0AType /cmds to know all my commands!!%0A%0ABot Made by Dragon</b>");
-}
-
-//////////=========[Cmds Command]=========//////////
-
-elseif ((strpos($message, "!cmds") === 0)||(strpos($message, "/cmds") === 0)){
-sendMessage($chatId, "<u>Bin lookup:</u> <code>!bin</code> xxxxxx%0A<u>SK Key Check:</u> <code>!sk</code> sk_live%0A<u> To know ur info%0A%0A<b>Bot Made by Aamir </b>");
-}
-
-//////////=========[Info Command]=========//////////
-
-elseif ((strpos($message, "!info") === 0)||(strpos($message, "/info") === 0)){
-sendMessage($chatId, "<u>ID:</u> <code>$userId</code>%0A<u>First Name:</u> $firstname%0A<u>Username:</u> @$username%0A%0A<b>Bot Made by Dragon </b>");
-}
-
-//////////=========[Bin Command]=========//////////
-
-elseif ((strpos($message, "!bin") === 0)||(strpos($message, "/bin") === 0)){
-$bin = substr($message, 5);
-function GetStr($string, $start, $end){
-$str = explode($start, $string);
-$str = explode($end, $str[1]);  
-return $str[0];
-};
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://lookup.binlist.net/'.$bin.'');
-curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'Host: lookup.binlist.net',
-'Cookie: _ga=GA1.2.549903363.1545240628; _gid=GA1.2.82939664.1545240628',
-'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'));
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, '');
+/, '');
 $fim = curl_exec($ch);
 $bank = GetStr($fim, '"bank":{"name":"', '"');
 $name = GetStr($fim, '"name":"', '"');
